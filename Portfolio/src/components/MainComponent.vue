@@ -1,33 +1,37 @@
 <script>
-const parallax = document.querySelector('.parallax')
-const parallax_value = document.querySelectorAll('.par_value')
+document.addEventListener('mousemove', parallax);
+function parallax(e){
+    document.querySelectorAll('.object').forEach(function(move){
+        var moving_value = move.getAttribute('data-value');
+        var x = e.clientX * moving_value;
+        var y = e.clientY * moving_value;
 
+        move.style.transform = 'translateX('+x+'px) translateY(' + y +'px)';
+    })
+}
 
-parallax.addEventListener('mousemove', e => {
-    const x = e.clientX;
-    const y = e.clientY;
-
-    font.style.transform ='translate(${x/ parallax_value}%)'
-})
 </script>
 
 <template>
     <div class="my_body">
         <section class="parallax"></section>
         <div class="main_container row">
-            <div class="col-3 par_value">
-                <div class="layer1"><img src="./icons/IMG_20230927_130243_242.jpg" style="right: -53px; top: 54px; z-index: 1;"></div>
-                <div class="layer1"><img src="./icons/image_2023-09-27_19-36-44.png" ></div>
-                <div class="layer1"><img src="./icons/IMG_20230927_130530_740.jpg" style="right: -52px; top: -57px;"></div>
+            <div class="col-3">
+                <div class="layer1 object" data-value="0.03"><img src="./icons/IMG_20230927_130243_242.jpg" style="right: -53px; top: 50px; z-index: 1;"></div>
+                <div class="layer1 object" data-value="0.02"><img src="./icons/image_2023-09-27_19-36-44.png" ></div>
+                <div class="layer1 object" data-value="0.01"><img src="./icons/IMG_20230927_130530_740.jpg" style="right: -52px; top: -60px;"></div>
             </div>
             <div class="col-6">
-                <h2 class="main_text bold_text">My</h2>
-                <h2><span>Profile</span></h2>
+                <div class="object" data-value="0.01">
+                    <h2 class="main_text bold_text">My</h2>
+                    <h2><span>Profile</span></h2>
+                </div>
+                
             </div>
-            <div class="col-3 par_value">
-                <div class="layer2"><img src="./icons/IMG_20230927_130541_952.jpg"  style="right: 43px; top: 54px; z-index: 1;"></div>
-                <div class="layer1"><img src="./icons/image_2023-09-27_19-37-16.png" ></div>
-                <div class="layer2"><img src="./icons/IMG_20230927_130808_779.jpg" style="right: 38px;top: -57px;" ></div>
+            <div class="col-3">
+                <div class="layer2 object" data-value="0.03"><img src="./icons/IMG_20230927_130541_952.jpg"  style="right: 43px; top: 50px; z-index: 1;"></div>
+                <div class="layer2 object" data-value="0.02"><img src="./icons/image_2023-09-27_19-37-16.png" ></div>
+                <div class="layer2 object" data-value="0.01"><img src="./icons/IMG_20230927_130808_779.jpg" style="right: 38px; top: -60px;" ></div>
             </div>
         </div>
     </div>
@@ -52,7 +56,7 @@ parallax.addEventListener('mousemove', e => {
     min-width: 900px;
   margin: 0;
   padding: 0;
-  background-color: #cd914f;
+  background-color: #FFCC70;
   justify-content: center; 
   align-items: center;
   color: white;
@@ -82,8 +86,8 @@ parallax.addEventListener('mousemove', e => {
 
 .main_container img{
     position: relative;
-    width: 150px;
-    height: 220px;
+    width: 200px;
+    height: 255px;
     object-fit: cover;
     border-radius: 1rem;
 }
