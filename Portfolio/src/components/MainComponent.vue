@@ -176,6 +176,7 @@ html {
 section{
     display: grid;
     height: 100vh;
+    transform: translatex(-50%)
 }
 .hidden{
     opacity: 0;
@@ -184,5 +185,6 @@ section{
 .show{
     opacity: 1;
     transition: all 2s;
+    transform: translatex(0%)
 }
 </style>
