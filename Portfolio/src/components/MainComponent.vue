@@ -1,8 +1,10 @@
-<script>
-import piechart from './PieChart.vue'   
+<script setup>
+import SkillBlok from './SkillsComponent.vue'
+import { ref, onMounted  } from 'vue'; // Import ref from Vue
 document.addEventListener('mousemove', parallax);
 function parallax(e){
     document.querySelectorAll('.object').forEach(function(move){
+        
         var moving_value = move.getAttribute('data-value');
         var x = e.clientX * moving_value;
         var y = e.clientY * moving_value;
@@ -10,8 +12,35 @@ function parallax(e){
         move.style.transform = 'translateX('+x+'px) translateY(' + y +'px)';
     })
 }
+const observerOptions = {
+    threshold: 0.2, 
+  };
 
+  // Intersection Observer callback
+  const observerCallback = (entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+        observer.unobserve(entry.target);
+      }
+    });
+  };
+
+  // Create a ref for each hidden section
+  const skillsSection1 = ref(null);
+  const skillsSection2 = ref(null);
+
+  // Create Intersection Observer instances for each hidden section
+  const skillsSectionObserver = new IntersectionObserver(observerCallback, observerOptions);
+  const otherSectionObserver = new IntersectionObserver(observerCallback, observerOptions);
+
+  // Observe the hidden sections
+  onMounted(() => {
+    skillsSectionObserver.observe(skillsSection1.value);
+    otherSectionObserver.observe(skillsSection2.value);
+  });
 </script>
+
 
 <template>
     <div class="my_body">
@@ -35,14 +64,16 @@ function parallax(e){
                 <div class="layer2 object" data-value="0.01"><img src="./icons/IMG_20230927_130808_779.jpg" style="right: 38px; top: -60px;" ></div>
             </div>
         </div>
-        <div class="line" style="margin-top: 2rem;"></div>
     </div>
+    <div class="line" style="margin-top: 0rem 0rem 2rem 0rem;"></div>
         <div class="container">
-            <div class="bold_text" style="text-align: center; color: #33363c; text-decoration: underline; margin-bottom: 2rem;">My skills</div>
-            <div class="row">
-                <div class="col-6"><piechart/></div>
-                <div class="col-6 poly_container"><img src="./icons/brain.png" class="brain"  alt=""></div>
-            </div>
+            <section class="hidden" ref="skillsSection1">
+                <div>asda</div>
+                <SkillBlok />
+            </section>
+            <section class="hidden" ref="skillsSection2">
+                <div>asda</div>
+            </section>
             
         </div>
     </div>
@@ -53,6 +84,12 @@ function parallax(e){
 
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap');
+
+html {
+  
+  width:100%;
+  height:100%;
+}
 .normal_text{
     font-family: Kanit;
     font-weight: 300;  
@@ -61,7 +98,7 @@ function parallax(e){
 .bold_text{
     font-family: Kanit;
     font-weight: 700; 
-    font-size: 50px; 
+    font-size: 70px; 
 }
 
 .my_body {
@@ -74,7 +111,9 @@ function parallax(e){
   color: white;
 }
 .main_bg{
+    height: 100vh;
     background-color: #FFCC70;
+
 }
 .main_container{
     position: relative;
@@ -134,29 +173,16 @@ function parallax(e){
   width: 100%; 
   background-color:  #ed902e;
 }
-.poly_container{
-    display: flex;
-    justify-content: center; 
-  align-items: center;
+section{
+    display: grid;
+    height: 100vh;
 }
-.brain{
-    width: 70%;
-    animation: moon-move 10s infinite ease-in-out;
+.hidden{
+    opacity: 0;
+    transition: all 2s;
 }
-
-@keyframes moon-move {
-    from{
-        transform: translateX(0%) translateY(-5%);
-        
-    }
-
-    50%{
-        transform: translateX(0%) translateY(-15%);
-    }
-
-    to{
-        transform: translateX(0%) translateY(0%);
-    }
+.show{
+    opacity: 1;
+    transition: all 2s;
 }
-
 </style>

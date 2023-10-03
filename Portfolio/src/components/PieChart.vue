@@ -1,39 +1,35 @@
 <template>
     <div>
-    <canvas id="myChart"></canvas>
-  </div>
-  </template>
-  
-  <script setup>
-  import { ref } from 'vue';
-  import Chart from 'chart.js/auto';
-  import { onMounted } from 'vue';
+        <canvas id="myChart"></canvas>
+    </div>
+</template>
 
+<script setup="setup">
 
-  onMounted(() => {
-    const ctx = document.getElementById('myChart');
-    new Chart(ctx, {
-        type: 'doughnut',
-      data: {
-        labels: [
-                    'Java Script',
-                    'Python',
-                    'HTML/CSS',
+    import Chart from 'chart.js/auto';
+    import {onMounted} from 'vue';
+
+    onMounted(() => {
+        const ctx = document.getElementById('myChart');
+        new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: [
+                    'Java Script', 'Python', 'HTML/CSS'
                 ],
-        datasets: [
-          {
-            label: 'My First Dataset',
-            data: [300, 230,150],
-            backgroundColor: [
-            'rgb(255, 99, 132)',
-            'rgb(54, 162, 235)',
-            'rgb(176, 208, 0)',
-            ],
-            hoverOffset: 4
-          },
-        ],
-      },
-
+                datasets: [
+                    {
+                        label: 'My First Dataset',
+                        data: [
+                            300, 230, 150
+                        ],
+                        backgroundColor: [
+                            'rgb(255, 99, 132)', 'rgb(54, 162, 235)', 'rgb(176, 208, 0)'
+                        ],
+                        hoverOffset: 4
+                    }
+                ]
+            }
+        });
     });
-  });
-  </script>
+</script>
