@@ -1,5 +1,10 @@
 <script setup>
 import SkillBlok from './SkillsComponent.vue'
+import Medialink from './LinksComponent.vue'
+import NavBar from "./NavComponent.vue"
+import RandFacts from "./RandomFacts.vue"
+
+
 import { ref, onMounted  } from 'vue'; // Import ref from Vue
 document.addEventListener('mousemove', parallax);
 function parallax(e){
@@ -43,16 +48,20 @@ const observerOptions = {
 
 
 <template>
+    
     <div class="my_body">
+        <NavBar/>
+        
         <div class="main_bg">
+        
         <div class="main_container row">
             <div class="col-3">
                 <div class="layer1 object" data-value="0.03"><img src="./icons/IMG_20230927_130243_242.jpg" style="right: -53px; top: 50px; z-index: 1;"></div>
                 <div class="layer1 object" data-value="0.02"><img src="./icons/image_2023-09-27_19-36-44.png" ></div>
                 <div class="layer1 object" data-value="0.01"><img src="./icons/IMG_20230927_130530_740.jpg" style="right: -52px; top: -83px;"></div>
             </div>
-            <div class="col-6">
-                <div class="object" data-value="0.01">
+            <div class="col-6 align-self-start" style="margin-top: 8rem;">
+                <div class="object" data-value="0.01" style="top: 50%">
                     <h2 class="main_text bold_text">My</h2>
                     <h2><span>Profile</span></h2>
                 </div>
@@ -63,16 +72,23 @@ const observerOptions = {
                 <div class="layer2 object" data-value="0.02"><img src="./icons/image_2023-09-27_19-37-16.png" ></div>
                 <div class="layer2 object" data-value="0.01"><img src="./icons/IMG_20230927_130808_779.jpg" style="right: 38px; top: -60px;" ></div>
             </div>
+            
         </div>
+        <div class="my_photo">
+            <img src="./icons/me.png" alt="">
+        </div>
+        <div class="medialink">
+            <Medialink />
+        </div>
+        
     </div>
-    <div class="line" style="margin-top: 0rem 0rem 2rem 0rem;"></div>
+    
         <div class="container">
-            <section class="hidden" ref="skillsSection1">
-                <div>asda</div>
+            <section class="hidden skillblock" ref="skillsSection1">
                 <SkillBlok />
             </section>
-            <section class="hidden" ref="skillsSection2">
-                <div>asda</div>
+            <section class="hidden randfackts" ref="skillsSection2">
+                <RandFacts />
             </section>
             
         </div>
@@ -105,15 +121,14 @@ html {
     min-width: 900px;
   margin: 0;
   padding: 0;
-  background-color: #fff0d3;
-  justify-content: center; 
-  align-items: center;
+  background-color: #23232d;
+
   color: white;
 }
 .main_bg{
     height: 100vh;
-    background-color: #FFCC70;
-
+    background-color: #363543;
+    position: relative;
 }
 .main_container{
     position: relative;
@@ -127,8 +142,6 @@ html {
 }
 .container{
     position: relative;
-    justify-content: center; 
-    align-items: center;
     max-width: 100%; 
     width: 80%;
 }
@@ -173,10 +186,16 @@ html {
   width: 100%; 
   background-color:  #ed902e;
 }
-section{
+.skillblock{
     display: grid;
     height: 100vh;
     transform: translatex(-50%)
+}
+.randfackts{
+    display: grid;
+    height: 100vh;
+    transform: translatex(-50%);
+    overflow-x: hidden;
 }
 .hidden{
     opacity: 0;
@@ -187,4 +206,19 @@ section{
     transition: all 2s;
     transform: translatex(0%)
 }
+.my_photo{
+    z-index: 9;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; 
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.my_photo img{
+
+    width: 30%;
+}
+
 </style>
