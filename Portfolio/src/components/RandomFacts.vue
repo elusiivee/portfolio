@@ -14,7 +14,7 @@
             <ul class="list list-group list-group-flush normal_text">
                 <li class="list-group-item">• Front- End sounds interesting</li>
                 <li class="list-group-item">• I like coding</li>
-                <li class="list-group-item">• I am into website design</li>
+                <li class="list-group-item">• I am into Web Development</li>
                 <li class="list-group-item">• My mentor was Optimus Prime</li>
                 <li class="list-group-item">• I love using my skills to create magic</li>
                 <li class="list-group-item">• I want to be Full Stack Developer</li>

@@ -62,20 +62,20 @@ const observerOptions = {
             </div>
             <div class="col-6 align-self-start" style="margin-top: 8rem;">
                 <div class="object" data-value="0.01" style="top: 50%">
-                    <h2 class="main_text bold_text">My</h2>
+                    <h2 class="main_text bold_text" style="font-size: 120px;">My</h2>
                     <h2><span>Profile</span></h2>
                 </div>
                 
             </div>
             <div class="col-3">
                 <div class="layer2 object" data-value="0.03"><img src="./icons/IMG_20230927_130541_952.jpg"  style="right: 43px; top: 50px; z-index: 1;"></div>
-                <div class="layer2 object" data-value="0.02"><img src="./icons/image_2023-09-27_19-37-16.png" ></div>
+                <div class="layer2 object" data-value="0.02"><img src="./icons/image_2023-09-27_19-37-16.png"></div>
                 <div class="layer2 object" data-value="0.01"><img src="./icons/IMG_20230927_130808_779.jpg" style="right: 38px; top: -60px;" ></div>
             </div>
             
         </div>
         <div class="my_photo">
-            <img src="./icons/me.png" alt="">
+            <img src="./icons/me1.png" alt="">
         </div>
         <div class="medialink">
             <Medialink />
@@ -118,7 +118,7 @@ html {
 }
 
 .my_body {
-    min-width: 900px;
+
   margin: 0;
   padding: 0;
   background-color: #23232d;
@@ -164,6 +164,7 @@ html {
     height: 50%;
     object-fit: cover;
     border-radius: 1rem;
+
 }
 .main_container h2{
     
@@ -206,6 +207,8 @@ html {
     transition: all 2s;
     transform: translatex(0%)
 }
+
+
 .my_photo{
     z-index: 9;
     display: flex;
@@ -218,7 +221,35 @@ html {
 }
 .my_photo img{
 
-    width: 30%;
+    width: 33%;
+}
+
+
+@media screen and (max-width: 1200px) {
+.my_photo img{
+    width: 40%
+  }
+.main_container img{
+    width: 70%;
+}
+}
+
+@media screen and (max-width: 1000px) {
+.my_photo img{
+    width: 50%
+  }
+.main_container img{
+    width: 80%;
+}
+}
+
+@media screen and (max-width: 900px) {
+.my_photo img{
+    width: 50%
+  }
+.main_container img{
+    width: 100%;
+}
 }
 
 </style>
