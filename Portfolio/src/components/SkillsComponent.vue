@@ -5,7 +5,8 @@
 
 <template>
     <div class="bold_text"
-        style="text-align: center; color: #e4e2e2; text-decoration: underline; margin: 5rem 0rem 2rem 0rem; ">My skills</div>
+        style=" color: #e4e2e2; margin: 5rem 0rem 0rem 0rem; ">What king of skills I have right now</div>
+        <div class="line"></div>
     <div class="row">
         <div class="col-sm-12 col-lg-6 ">
             <piechart></piechart>  
@@ -20,11 +21,7 @@
 
 <style>
 
-.center{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+
 
 .programing {
     width: 80%;

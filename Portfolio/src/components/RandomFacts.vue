@@ -7,10 +7,10 @@
     <div class="bold_text"
         style="text-align: center; color: #e4e2e2; text-decoration: underline; margin: 5rem 0rem 2rem 0rem; ">Random Facts</div>
     <div class="row">
-        <div class="col-6 optimus">
+        <div class="col-sm-12 col-lg-6 optimus">
             <img src="./icons/optimus.png" alt="">
         </div>
-        <div class="col-6">
+        <div class="col-sm-12 col-lg-6">
             <ul class="list list-group list-group-flush normal_text">
                 <li class="list-group-item">• Front- End sounds interesting</li>
                 <li class="list-group-item">• I like coding</li>
@@ -39,5 +39,10 @@
     background-color: transparent;
     font-size: 30px;
 }
+@media screen and (max-width: 992px) {
+    .optimus img{
+    width: 60%;
+}
 
+}
 </style>

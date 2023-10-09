@@ -9,7 +9,7 @@ import { ref, onMounted  } from 'vue'; // Import ref from Vue
 document.addEventListener('mousemove', parallax);
 function parallax(e){
     document.querySelectorAll('.object').forEach(function(move){
-        
+
         var moving_value = move.getAttribute('data-value');
         var x = e.clientX * moving_value;
         var y = e.clientY * moving_value;
@@ -34,6 +34,7 @@ const observerOptions = {
   // Create a ref for each hidden section
   const skillsSection1 = ref(null);
   const skillsSection2 = ref(null);
+  const skillsSection3 = ref(null);
 
   // Create Intersection Observer instances for each hidden section
   const skillsSectionObserver = new IntersectionObserver(observerCallback, observerOptions);
@@ -43,6 +44,7 @@ const observerOptions = {
   onMounted(() => {
     skillsSectionObserver.observe(skillsSection1.value);
     otherSectionObserver.observe(skillsSection2.value);
+    otherSectionObserver.observe(skillsSection3.value);
   });
 </script>
 
@@ -82,16 +84,27 @@ const observerOptions = {
         </div>
         
     </div>
-    
-        <div class="container">
-            <section class="hidden skillblock" ref="skillsSection1">
-                <SkillBlok />
-            </section>
-            <section class="hidden randfackts" ref="skillsSection2">
-                <RandFacts />
-            </section>
-            
-        </div>
+            <div class="skillbox">            
+                <div class="container ">
+                    <section class="hidden skillblock" ref="skillsSection1">
+                        <SkillBlok />
+                    </section>
+                </div>
+            </div>
+            <div class="factsbox">  
+            <div class="container random_facts">
+                <section class="hidden randfackts" ref="skillsSection2">
+                    <RandFacts />
+                </section>
+            </div>
+            </div>
+            <div class="servicebox">  
+            <div class="container services">
+                <section class="hidden randfackts" ref="skillsSection3">
+                    <RandFacts />
+                </section>
+            </div>
+            </div>
     </div>
     
 </template>
@@ -182,19 +195,15 @@ html {
     letter-spacing: 10px;
 
 }
-.line{
-    height: 2px;
-  width: 100%; 
-  background-color:  #ed902e;
-}
+
 .skillblock{
     display: grid;
-    height: 100vh;
+    min-height: 100vh;
     transform: translatex(-50%)
 }
 .randfackts{
     display: grid;
-    height: 100vh;
+    min-height: 100vh;
     transform: translatex(-50%);
     overflow-x: hidden;
 }
@@ -224,6 +233,15 @@ html {
     width: 33%;
 }
 
+.skillbox{
+    background-color: #23232d;
+}
+.factsbox{
+    background-color: #363543;
+}
+.servicebox{
+    background-color: #23232d;
+}
 
 @media screen and (max-width: 1200px) {
 .my_photo img{
