@@ -5,7 +5,7 @@
 
 <template>
     <div class="bold_text"
-        style="text-align: center; color: #e4e2e2; text-decoration: underline; margin: 5rem 0rem 2rem 0rem; ">Random Facts</div>
+        style="text-align: center; color: #e4e2e2; margin: 5rem 0rem 2rem 0rem; ">Random Facts</div>
     <div class="row">
         <div class="col-sm-12 col-lg-6 optimus">
             <img src="./icons/optimus.png" alt="">
@@ -41,7 +41,7 @@
 }
 @media screen and (max-width: 992px) {
     .optimus img{
-    width: 60%;
+    width: 80%;
 }
 
 }

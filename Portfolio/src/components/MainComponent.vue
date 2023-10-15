@@ -3,9 +3,16 @@ import SkillBlok from './SkillsComponent.vue'
 import Medialink from './LinksComponent.vue'
 import NavBar from "./NavComponent.vue"
 import RandFacts from "./RandomFacts.vue"
+import MyServices from "./MyServices.vue"
 
 
 import { ref, onMounted  } from 'vue'; // Import ref from Vue
+
+
+
+
+
+
 document.addEventListener('mousemove', parallax);
 function parallax(e){
     document.querySelectorAll('.object').forEach(function(move){
@@ -46,6 +53,10 @@ const observerOptions = {
     otherSectionObserver.observe(skillsSection2.value);
     otherSectionObserver.observe(skillsSection3.value);
   });
+
+
+
+
 </script>
 
 
@@ -92,16 +103,16 @@ const observerOptions = {
                 </div>
             </div>
             <div class="factsbox">  
-            <div class="container random_facts">
+            <div class="container">
                 <section class="hidden randfackts" ref="skillsSection2">
                     <RandFacts />
                 </section>
             </div>
             </div>
             <div class="servicebox">  
-            <div class="container services">
-                <section class="hidden randfackts" ref="skillsSection3">
-                    <RandFacts />
+            <div class="container">
+                <section class="hidden services" ref="skillsSection3">
+                    <MyServices />
                 </section>
             </div>
             </div>
@@ -199,9 +210,16 @@ html {
 .skillblock{
     display: grid;
     min-height: 100vh;
-    transform: translatex(-50%)
+    transform: translatex(-50%);
+
 }
 .randfackts{
+    display: grid;
+    min-height: 100vh;
+    transform: translatex(-50%);
+    overflow-x: hidden;
+}
+.services{
     display: grid;
     min-height: 100vh;
     transform: translatex(-50%);
@@ -234,7 +252,8 @@ html {
 }
 
 .skillbox{
-    background-color: #23232d;
+    background: rgb(54,53,67);
+    background: linear-gradient(0deg, rgba(54,53,67,1) 0%, rgba(35,35,46,1) 30%, rgba(35,35,45,1) 100%);
 }
 .factsbox{
     background-color: #363543;
@@ -249,6 +268,15 @@ html {
   }
 .main_container img{
     width: 70%;
+}
+.services_block{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.block_container{
+    width: 50%;
 }
 }
 
@@ -268,6 +296,11 @@ html {
 .main_container img{
     width: 100%;
 }
+.block_container{
+    width: 80%;
 }
-
+}
+::selection {
+    background-color: rgb(255, 75, 75);
+} 
 </style>
