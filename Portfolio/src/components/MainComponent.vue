@@ -87,9 +87,7 @@ const observerOptions = {
             </div>
             
         </div>
-        <div class="my_photo">
-            <img src="./icons/me1.png" alt="">
-        </div>
+
         <div class="medialink">
             <Medialink />
         </div>
@@ -259,7 +257,7 @@ html {
     background-color: #363543;
 }
 .servicebox{
-    background-color: #23232d;
+    background-color: #28282f;
 }
 
 @media screen and (max-width: 1200px) {
@@ -303,4 +301,8 @@ html {
 ::selection {
     background-color: rgb(255, 75, 75);
 } 
+
+
+
+
 </style>
