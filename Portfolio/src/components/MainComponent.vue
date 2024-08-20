@@ -3,9 +3,9 @@ import SkillBlok from './SkillsComponent.vue'
 import Medialink from './LinksComponent.vue'
 import NavBar from "./NavComponent.vue"
 import RandFacts from "./RandomFacts.vue"
-import MyServices from "./MyServices.vue"
+import MyProjects from "./MyProjects.vue"
 import LiveScore from "./LiveScore.vue"
-
+import AllSkills from "./AllSkills.vue"
 
 import { ref, onMounted  } from 'vue'; // Import ref from Vue
 
@@ -43,6 +43,7 @@ const observerOptions = {
   const skillsSection1 = ref(null);
   const skillsSection2 = ref(null);
   const skillsSection3 = ref(null);
+  const skillsSection4 = ref(null);
 
   // Create Intersection Observer instances for each hidden section
   const skillsSectionObserver = new IntersectionObserver(observerCallback, observerOptions);
@@ -52,7 +53,7 @@ const observerOptions = {
   onMounted(() => {
     skillsSectionObserver.observe(skillsSection1.value);
     otherSectionObserver.observe(skillsSection2.value);
-    otherSectionObserver.observe(skillsSection3.value);
+    otherSectionObserver.observe(skillsSection4.value);
   });
 
 
@@ -72,12 +73,15 @@ const observerOptions = {
             <div class="col-3">
                 <div class="layer1 object" data-value="0.03"><img src="./icons/IMG_20230927_130243_242.jpg" style="right: -53px; top: 50px; z-index: 1;"></div>
                 <div class="layer1 object" data-value="0.02"><img src="./icons/image_2023-09-27_19-36-44.png" ></div>
-                <div class="layer1 object" data-value="0.01"><img src="./icons/IMG_20230927_130530_740.jpg" style="right: -52px; top: -83px;"></div>
+                <div class="layer1 object" data-value="0.01"><img src="./icons/IMG_20230927_130530_740.jpg" style="right: -72px; top: -83px;"></div>
             </div>
             <div class="col-6 align-self-start" style="margin-top: 8rem;">
                 <div class="object" data-value="0.01" style="top: 50%">
-                    <h2 class="main_text bold_text" style="font-size: 120px;">My</h2>
-                    <h2><span>Profile</span></h2>
+                    <div></div>
+                        <div class="bold_text my_profile"  style="text-align: center;">My <p class="normal_text ">Profile</p></div>
+
+                <!--<h2 class="main_text bold_text" style="font-size: 120px;">My</h2>
+                    <h2><span>Profile</span></h2> -->
                 </div>
                 
             </div>
@@ -92,7 +96,7 @@ const observerOptions = {
         <div class="medialink">
             <Medialink />
         </div>
-        
+
     </div>
             <div class="skillbox">            
                 <div class="container ">
@@ -101,13 +105,14 @@ const observerOptions = {
                     </section>
                 </div>
             </div>
-            <div class="factsbox">  
-            <div class="container">
-                <section class="hidden randfackts" ref="skillsSection2">
-                    <RandFacts />
-                </section>
+            <div class="allskillbox">            
+                <div class="container ">
+                    <section class="hidden skillblock" ref="skillsSection2">
+                        <AllSkills />
+                    </section>
+                </div>
             </div>
-            </div>
+            
             <div class="livescorebox">  
             <div class="container">
                 <section class="">
@@ -115,14 +120,20 @@ const observerOptions = {
                 </section>
             </div>
             </div>
-            <div class="servicebox">  
+            <div class="projectbox">  
             <div class="container">
-                <section class="hidden services" ref="skillsSection3">
-                    <MyServices />
+                <section class="hidden projects" ref="skillsSection3">
+                    <MyProjects />
                 </section>
             </div>
             </div>
-            
+            <div class="factsbox">  
+            <div class="container">
+                <section class="hidden randfackts" ref="skillsSection4">
+                    <RandFacts />
+                </section>
+            </div>
+            </div>
     </div>
     
 </template>
@@ -152,13 +163,17 @@ html {
 
   margin: 0;
   padding: 0;
-  background-color: #23232d;
+  background-color: #2f2f3b;
 
   color: white;
 }
+.my_profile{
+    font-size: 10rem;
+}
+
 .main_bg{
     height: 100vh;
-    background-color: #363543;
+    background-color: #323338;
     position: relative;
 }
 .main_container{
@@ -226,7 +241,7 @@ html {
     transform: translatex(-50%);
     overflow-x: hidden;
 }
-.services{
+.projects{
     display: grid;
     min-height: 100vh;
     transform: translatex(-50%);
@@ -259,21 +274,23 @@ html {
 }
 
 .skillbox{
-    background: rgb(54,53,67);
-    background: linear-gradient(0deg, rgba(54,53,67,1) 0%, rgba(35,35,46,1) 30%, rgba(35,35,45,1) 100%);
+    background-color: #2c2d32;
+    }
+.allskillbox{
+    background-color: #323338;
 }
 .factsbox{
-    background-color: #363543;
+   
 }
-.servicebox{
-    background-color: #28282f;
+.projectbox{
+    
 }
 
 .livescorebox{
-    background-color: #28282f;
+    
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1300px) {
 .my_photo img{
     width: 40%
   }
@@ -289,6 +306,9 @@ html {
 .block_container{
     width: 50%;
 }
+.my_profile{
+    font-size: 7rem;
+}
 }
 
 @media screen and (max-width: 1000px) {
@@ -297,6 +317,9 @@ html {
   }
 .main_container img{
     width: 80%;
+}
+.my_profile{
+    font-size: 6rem;
 }
 }
 
@@ -309,6 +332,9 @@ html {
 }
 .block_container{
     width: 80%;
+}
+.my_profile{
+    font-size: 5rem;
 }
 }
 ::selection {

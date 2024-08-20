@@ -10,14 +10,17 @@
     import {onMounted} from 'vue';
 
     onMounted(() => {
+        Chart.defaults.font.size = 18;
         const ctx = document.getElementById('myChart');
         new Chart(ctx, {
             type: 'doughnut',
+            
             data: {
-                
+                weight: 'bold',
                 labels: [
                     'Java Script', 'Python', 'HTML/CSS'
                 ],
+                
                 datasets: [
                     {
                         label: 'My First Dataset',
@@ -31,8 +34,15 @@
                 ]
             },
             options: {
+                        plugins: {
+                        title: {
+                            display: true,
+                            weight: 'bold'
+                        }
+                    },
                         indexAxis: 'y',
                     },
+            
         });
         
     });
