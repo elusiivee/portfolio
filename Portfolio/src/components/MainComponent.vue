@@ -6,6 +6,7 @@ import RandFacts from "./RandomFacts.vue"
 import MyProjects from "./MyProjects.vue"
 import LiveScore from "./LiveScore.vue"
 import AllSkills from "./AllSkills.vue"
+import Portfolio from './Portfolio.vue'
 
 import { ref, onMounted  } from 'vue'; // Import ref from Vue
 
@@ -78,7 +79,7 @@ const observerOptions = {
             <div class="col-6 align-self-start" style="margin-top: 8rem;">
                 <div class="object" data-value="0.01" style="top: 50%">
                     <div></div>
-                        <div class="bold_text my_profile"  style="text-align: center;">My <p class="normal_text ">Profile</p></div>
+                        <div class="bold_text my_profile"  style="text-align: center;">My <p class="normal_text " style="color: orange;">Profile</p></div>
 
                 <!--<h2 class="main_text bold_text" style="font-size: 120px;">My</h2>
                     <h2><span>Profile</span></h2> -->
@@ -112,7 +113,13 @@ const observerOptions = {
                     </section>
                 </div>
             </div>
-            
+            <div class="portfoliocorebox">  
+            <div class="container">
+                <section class="">
+                    <Portfolio />
+                </section>
+            </div>
+            </div>
             <div class="livescorebox">  
             <div class="container">
                 <section class="">
@@ -120,13 +127,7 @@ const observerOptions = {
                 </section>
             </div>
             </div>
-            <div class="projectbox">  
-            <div class="container">
-                <section class="hidden projects" ref="skillsSection3">
-                    <MyProjects />
-                </section>
-            </div>
-            </div>
+            
             <div class="factsbox">  
             <div class="container">
                 <section class="hidden randfackts" ref="skillsSection4">
@@ -144,7 +145,7 @@ const observerOptions = {
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap');
 
 html {
-  
+  min-width: 822px;
   width:100%;
   height:100%;
 }
@@ -235,6 +236,7 @@ html {
     transform: translatex(-50%);
 
 }
+
 .randfackts{
     display: grid;
     min-height: 100vh;
@@ -269,7 +271,6 @@ html {
     right: 0;
 }
 .my_photo img{
-
     width: 33%;
 }
 
@@ -278,6 +279,11 @@ html {
     }
 .allskillbox{
     background-color: #323338;
+}
+.portfoliocorebox{
+    background-color: #2c2d32;
+    height: 180vh;
+
 }
 .factsbox{
    

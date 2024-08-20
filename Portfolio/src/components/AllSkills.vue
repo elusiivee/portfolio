@@ -3,8 +3,10 @@
 </script>
 
 <template>
-    <div class="bold_text"
-        style="text-align: center; color: #e4e2e2; margin: 5rem 0rem 2rem 0rem; ">Knowledge</div>
+    
+    <div class="bold_text" style="text-align: center; color: #e4e2e2; margin: 5rem 0rem 2rem 0rem; ">Knowledge</div>
+    <div class="normal_text" style="text-align: center; color: #8a8a8a; margin: 0rem 8rem 2rem 8rem; ">In which areas I have tested myself and have real experience that I can use for future purposes. This knowledge and experience are the foundation for my continuous growth and the ability to contribute effectively to future projects.
+    </div>
     <div class="services_block" >
         <div class="block_container normal_text">
             <span><img class="skill_icon" src="../components/icons/coding.png" alt=""></span>
@@ -41,7 +43,7 @@
 }
 .block_container{
     position: relative;
-    height: 25rem;
+    height: 28rem;
     background-color: #2c2d32;
     border: none;
     box-shadow: 6px 9px 12px -2px #1a1b1e;

@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 
 <template>
-    <div class="normal_text" style=" color: #f9a602; margin: 5rem 0rem 0rem 0rem; text-align: center; ">abilities</div>
+    <div class="normal_text" style=" color: rgb(207, 134, 0); margin: 5rem 0rem 0rem 0rem; text-align: center; ">abilities</div>
     <div class="bold_text" style=" color: #e4e2e2; margin: 0rem 0rem 0rem 0rem; text-align: center; ">The main skills I have right now</div>
     <div class="line" style="margin-bottom: 1rem;"></div>
     <div class="row">

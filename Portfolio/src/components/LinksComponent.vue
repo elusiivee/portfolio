@@ -47,7 +47,7 @@
 	top: 100%;
 	transform: translate(-50%, -50%);
 	position: absolute;
-    background-color: #2c2b38;
+    background-color: #323338;
     border-radius: 0.5rem;
     box-shadow: 0px 0px 26px 3px rgba(0,0,0,0.62);
     padding: 2rem;
@@ -59,7 +59,7 @@
     justify-content: center;
     justify-content: center; 
     align-items: center;
-    background-color: #4b495b;
+    background-color: rgb(79, 78, 88);
     border: none;
     color: #e4e2e2;
     border-radius: 0.5rem;
@@ -73,6 +73,6 @@
     float: right;
 }
 .link:hover{
-    background-color: #575567;
+    background-color: #5e6168;
 }
 </style>
