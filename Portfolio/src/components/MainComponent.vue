@@ -4,6 +4,7 @@ import Medialink from './LinksComponent.vue'
 import NavBar from "./NavComponent.vue"
 import RandFacts from "./RandomFacts.vue"
 import MyServices from "./MyServices.vue"
+import LiveScore from "./LiveScore.vue"
 
 
 import { ref, onMounted  } from 'vue'; // Import ref from Vue
@@ -107,6 +108,13 @@ const observerOptions = {
                 </section>
             </div>
             </div>
+            <div class="livescorebox">  
+            <div class="container">
+                <section class="">
+                    <LiveScore />
+                </section>
+            </div>
+            </div>
             <div class="servicebox">  
             <div class="container">
                 <section class="hidden services" ref="skillsSection3">
@@ -114,6 +122,7 @@ const observerOptions = {
                 </section>
             </div>
             </div>
+            
     </div>
     
 </template>
@@ -257,6 +266,10 @@ html {
     background-color: #363543;
 }
 .servicebox{
+    background-color: #28282f;
+}
+
+.livescorebox{
     background-color: #28282f;
 }
 
