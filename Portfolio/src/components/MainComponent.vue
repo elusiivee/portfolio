@@ -3,7 +3,6 @@ import SkillBlok from './SkillsComponent.vue'
 import Medialink from './LinksComponent.vue'
 import NavBar from "./NavComponent.vue"
 import RandFacts from "./RandomFacts.vue"
-import MyProjects from "./MyProjects.vue"
 import LiveScore from "./LiveScore.vue"
 import AllSkills from "./AllSkills.vue"
 import Portfolio from './Portfolio.vue'
