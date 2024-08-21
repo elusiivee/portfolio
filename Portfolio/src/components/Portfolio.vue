@@ -15,6 +15,7 @@
       <!-- Gallery Content Sections -->
       <div v-if="currentSection === 'backend'" class="gallery-content">
         <a href="https://galaxyglance.netlify.app/" class="normal_text"  style=" color: rgb(207, 134, 0); margin: 0.5rem 0rem 0.5rem 0rem; text-align: center; font-size: 2rem;">GalaxyGlance</a>
+        <p class="normal_text" style="text-align: center; color: #8a8a8a; margin: 0rem 8rem 2rem 8rem">A website with a space theme. Various services such as receiving photos from the Nasa database. Photos of our planet from a satellite of a specific date and much more.</p>
           <div class="album">
             <div class="responsive-container-block bg">
                 <div class="responsive-container-block img-cont">
@@ -41,7 +42,8 @@
 
         <div class="album">
           <a href="https://elusive.pythonanywhere.com/" class="normal_text"  style=" color: rgb(207, 134, 0); margin: 0.5rem 0rem 0.5rem 0rem; text-align: center; font-size: 2rem;">Culinary Odissey</a>
-            <div class="responsive-container-block bg">
+          <p class="normal_text" style="text-align: center; color: #8a8a8a; margin: 0rem 8rem 2rem 8rem">Website with a restaurant. Book a table or read the comments of our visitors. Keep up to date with our news by following our blog.</p>
+          <div class="responsive-container-block bg">
                 <div class="responsive-container-block img-cont">
                 <img class="img" src="../components/icons/fr1.jpg">
                 <img class="img" src="../components/icons/fr2.jpg">
@@ -64,6 +66,9 @@
       <div v-if="currentSection === 'design'" class="gallery-content">
 
         <div class="album">
+          <div class="normal_text"  style=" color: rgb(207, 134, 0); margin: 0.5rem 0rem 0.5rem 0rem; text-align: center; font-size: 2rem;">Photoshop</div>
+          <p class="normal_text" style="text-align: center; color: #8a8a8a; margin: 0rem 8rem 2rem 8rem">I edit photos just for fun.</p>
+
             <div class="responsive-container-block bg">
                 <div class="responsive-container-block img-cont">
                 <img class="img" src="../components/icons/ph1.jpg">
@@ -82,7 +87,9 @@
                 </div>
             </div>
             </div>
+            
       </div>
+      <div class="line"></div>
     </div>
 </section>
 </template>
@@ -104,7 +111,7 @@ data() {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
+    
     padding: 20px;
 }
 
@@ -149,7 +156,14 @@ data() {
     text-align: center;
 
 }
-
+.line{
+    border: 1px solid rgb(207, 134, 0);
+    width: 50%;
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1rem;
+}
 
 
 
@@ -233,7 +247,7 @@ data() {
   }
 }
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .album .img {
     max-width: 32.5%;
     margin: 0 0 0 0;
@@ -275,5 +289,5 @@ data() {
   .album .img.img-last {
     margin: 0 0 5px 0;
   }
-}
+} */
 </style>

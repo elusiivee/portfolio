@@ -7,6 +7,7 @@ import MyProjects from "./MyProjects.vue"
 import LiveScore from "./LiveScore.vue"
 import AllSkills from "./AllSkills.vue"
 import Portfolio from './Portfolio.vue'
+import FooterComponent from '../components/FooterComponent.vue'
 
 import { ref, onMounted  } from 'vue'; // Import ref from Vue
 
@@ -132,6 +133,13 @@ const observerOptions = {
             <div class="container">
                 <section class="hidden randfackts" ref="skillsSection4">
                     <RandFacts />
+                </section>
+            </div>
+            </div>
+            <div class="footerbox">  
+            <div class="container">
+                <section class="">
+                    <FooterComponent />
                 </section>
             </div>
             </div>
@@ -282,7 +290,7 @@ html {
 }
 .portfoliocorebox{
     background-color: #2c2d32;
-    height: 180vh;
+
 }
 .livescorebox{
     background-color: #323338;
@@ -290,8 +298,8 @@ html {
 .factsbox{
     background-color: #2c2d32;
 }
-.projectbox{
-    
+.footerbox{
+    background-color: #242427;
 }
 
 

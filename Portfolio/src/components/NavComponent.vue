@@ -3,7 +3,7 @@
 <template>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand normal_text" href="#">Portfolio</a>
+            <a class="navbar-brand normal_text">Portfolio</a>
             <button
                 class="navbar-toggler"
                 type="button"
