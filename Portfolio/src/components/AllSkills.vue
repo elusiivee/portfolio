@@ -3,7 +3,7 @@
 </script>
 
 <template>
-    
+<section id="knowledge">
     <div class="bold_text" style="text-align: center; color: #e4e2e2; margin: 5rem 0rem 2rem 0rem; ">Knowledge</div>
     <div class="normal_text" style="text-align: center; color: #8a8a8a; margin: 0rem 8rem 2rem 8rem; ">In which areas I have tested myself and have real experience that I can use for future purposes. This knowledge and experience are the foundation for my continuous growth and the ability to contribute effectively to future projects.
     </div>
@@ -33,6 +33,7 @@
             </div>
         </div>
     </div>
+</section>
 </template>
 
 <style>

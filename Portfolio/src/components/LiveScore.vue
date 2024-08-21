@@ -6,6 +6,7 @@
 
 
 <template>
+<section id="cv">
     <div class="livecontainer">
     <section class="timeline">
         <div class="bold_text" style=" color: #e4e2e2; margin: 5rem 0rem 0rem 0rem; text-align: center;">Curriculum vitae</div>
@@ -36,6 +37,7 @@
         <div class="event" id="school"><div class="date">September 2024 - ...</div> <div class="school">DevOps courses</div></div>
     </section>
   </div>
+</section>
 </template>
 
 

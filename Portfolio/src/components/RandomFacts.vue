@@ -4,6 +4,7 @@
 </script>
 
 <template>
+<section id="random_facts">
     <div class="bold_text"
         style="text-align: center; color: #e4e2e2; margin: 5rem 0rem 2rem 0rem; ">Random Facts</div>
     <div class="row">
@@ -21,8 +22,7 @@
             </ul>
         </div>
     </div>
-
-
+</section>
 </template>
 
 <style>

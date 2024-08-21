@@ -1,4 +1,5 @@
 <template>
+<section id="work">
     <div class="normal_text" style=" color: rgb(207, 134, 0); margin: 1rem 0rem 0rem 0rem; text-align: center; ">portfolio</div>
     <div class="bold_text" style="text-align: center; color: #e4e2e2; margin: 0rem 0rem 2rem 0rem; ">My works</div>
     <div class="normal_text" style="text-align: center; color: #8a8a8a; margin: 0rem 8rem 2rem 8rem; ">Discover my portfolio showcasing a variety of works across different fields. Each piece reflects my dedication to delivering high-quality and impactful results, demonstrating my expertise and creativity.
@@ -13,7 +14,8 @@
   
       <!-- Gallery Content Sections -->
       <div v-if="currentSection === 'backend'" class="gallery-content">
-            <div class="album">
+        <a href="https://galaxyglance.netlify.app/" class="normal_text"  style=" color: rgb(207, 134, 0); margin: 0.5rem 0rem 0.5rem 0rem; text-align: center; font-size: 2rem;">GalaxyGlance</a>
+          <div class="album">
             <div class="responsive-container-block bg">
                 <div class="responsive-container-block img-cont">
                 <img class="img" src="../components/icons/bk1.jpg">
@@ -38,6 +40,7 @@
       <div v-if="currentSection === 'frontend'" class="gallery-content">
 
         <div class="album">
+          <a href="https://elusive.pythonanywhere.com/" class="normal_text"  style=" color: rgb(207, 134, 0); margin: 0.5rem 0rem 0.5rem 0rem; text-align: center; font-size: 2rem;">Culinary Odissey</a>
             <div class="responsive-container-block bg">
                 <div class="responsive-container-block img-cont">
                 <img class="img" src="../components/icons/fr1.jpg">
@@ -81,6 +84,7 @@
             </div>
       </div>
     </div>
+</section>
 </template>
 
 <script>

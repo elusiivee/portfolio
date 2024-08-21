@@ -283,18 +283,18 @@ html {
 .portfoliocorebox{
     background-color: #2c2d32;
     height: 180vh;
-
+}
+.livescorebox{
+    background-color: #323338;
 }
 .factsbox{
-   
+    background-color: #2c2d32;
 }
 .projectbox{
     
 }
 
-.livescorebox{
-    
-}
+
 
 @media screen and (max-width: 1300px) {
 .my_photo img{
